@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="icon" type="image/x-icon" href="calc.avif">
+
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    
+    <div id="calculatorContainer">
+        
+        <input id="displayTxt" readonly>
+        <div id="calculatorButtons">
+            <button onclick="dispalyData('+')" class="operationButton" >+</button>
+            <button onclick="dispalyData('7')">7</button>
+            <button onclick="dispalyData('8')">8</button>
+            <button onclick="dispalyData('9')">9</button>
+            <button onclick="dispalyData('-')" class="operationButton">-</button>
+            <button onclick="dispalyData('5')">5</button>
+            <button onclick="dispalyData('6')">6</button>
+            <button onclick="dispalyData('7')">7</button>
+            <button onclick="dispalyData('*')" class="operationButton">*</button>
+            <button onclick="dispalyData('1')">1</button>
+            <button onclick="dispalyData('2')">2</button>
+            <button onclick="dispalyData('3')">3</button>
+            <button onclick="dispalyData('/')" class="operationButton">/</button>
+            <button onclick="dispalyData('.')" class="specialButton">.</button>
+            <button onclick="calculateOutput()" class="specialButton">=</button>
+            <button onclick="clearInput()" class="specialButton">C</button>
+        </div>
+       </div>
+
+       <script>
+        const userInput = document.getElementById('displayTxt');
+        
+        function dispalyData(input){
+
+            userInput.value += input;
+
+        }
+
+        function clearInput(){
+
+            userInput.value = "";
+
+        }
+
+        function calculateOutput(){
+
+            try{
+                userInput.value = eval(userInput.value);
+            }
+            catch(error){
+                userInput.value = 'Error!' 
+            }
+            
+
+        }
+       </script>
+     
+</body>
+</html>
