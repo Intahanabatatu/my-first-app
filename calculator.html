@@ -26,10 +26,16 @@
             <button onclick="dispalyData('1')">1</button>
             <button onclick="dispalyData('2')">2</button>
             <button onclick="dispalyData('3')">3</button>
+            
             <button onclick="dispalyData('/')" class="operationButton">/</button>
+            
             <button onclick="dispalyData('.')" class="specialButton">.</button>
             <button onclick="calculateOutput()" class="specialButton">=</button>
-            <button onclick="clearInput()" class="specialButton">C</button>
+            <button onclick="dispalyData('0')">0</button>
+            <button onclick="clearInput()" class="operationButton">C</button>
+            <button onclick="deleteInput()" class="specialButton">Del</button>
+            <button onclick="dispalyData(' ')" class="specialButton"></button>
+            
         </div>
        </div>
 
@@ -46,6 +52,9 @@
 
             userInput.value = "";
 
+        }
+        function deleteInput() {
+            userInput.value = userInput.value.slice(0, -1);
         }
 
         function calculateOutput(){
